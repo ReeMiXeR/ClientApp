@@ -13,9 +13,11 @@
         android:minHeight="?attr/actionBarSize"
         android:background="?attr/colorPrimary" />
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView" />
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/trips_list"
+        android:choiceMode="none"
+        android:numColumns="1" />
 
 </LinearLayout>

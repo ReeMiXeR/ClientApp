@@ -5,38 +5,41 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.SimpleAdapter;
-import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
+        toolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
         toolbar.setTitle("Search");
         toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
         setSupportActionBar(toolbar);
 
-        Spinner from = (Spinner) findViewById(R.id.from_spinner);
+        AutoCompleteTextView from = (AutoCompleteTextView) findViewById(R.id.from_edittext);
         ArrayList<String> list_from = new ArrayList<>();
-        list_from.add("Отправление");
-        SpinnerAdapter adapter_from = new ArrayAdapter<String>(this,
+        list_from.add("start");
+        ArrayAdapter adapter_from = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, list_from);
         from.setAdapter(adapter_from);
 
-        Spinner to = (Spinner) findViewById(R.id.to_spinner);
+        AutoCompleteTextView to = (AutoCompleteTextView) findViewById(R.id.to_edittext);
+        to.setCompletionHint("Finish");
         ArrayList<String> list_to = new ArrayList<>();
-        list_to.add("Прибытие");
-        SpinnerAdapter adapter_to = new ArrayAdapter<String>(this,
+        list_to.add("finish");
+        ArrayAdapter adapter_to = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, list_to);
         to.setAdapter(adapter_to);
 
