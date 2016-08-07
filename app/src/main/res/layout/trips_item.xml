@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical">
+
+
+    <ImageView
+        android:layout_marginLeft="16dp"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_gravity="center_vertical"
+        android:alpha=".54"
+        android:src="@drawable/from"/>
+        <TextView
+            android:id="@+id/from_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:alpha=".87"
+            android:text="13-30"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/from_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:alpha=".87"
+            android:text="Moscow"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Цена: "
+            android:alpha=".87"
+            android:textColor="@color/colorRed"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1500"
+            android:textColor="@color/colorRed"
+            android:alpha=".87"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/currency"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="2dp"
+
+            android:layout_height="wrap_content"
+            android:text=" руб."
+            android:alpha=".87"
+            android:textColor="@color/colorRed"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_marginLeft="16dp"
+            android:layout_height="23dp"
+            android:alpha=".54"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/to"/>
+
+        <TextView
+            android:id="@+id/to_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:alpha=".87"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="18-00"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/to_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:alpha=".87"
+            android:layout_weight="1"
+            android:text="Piter"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha=".57"
+            android:textColor="@color/colorBlack"
+            android:text="Мест:"/>
+
+        <TextView
+            android:id="@+id/seats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:alpha=".57"
+            android:text="10"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

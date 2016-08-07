@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ru.busride.NavigationActivity"
+    android:orientation="vertical"
+    android:background="#EEEEEE"
+    >
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#FFFFFF">
+
+        <AutoCompleteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:alpha=".87"
+            android:id="@+id/from_edittext"
+            android:inputType="textPhonetic"
+            android:text="Москва"
+            android:hint="Откуда"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:alpha=".5"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/location"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#EEEEEE"
+        ></View>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#FFFFFF">
+
+        <AutoCompleteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/to_edittext"
+            android:spinnerMode="dropdown"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:textColor="#000000"
+            android:alpha=".87"
+            android:hint="Куда"
+            android:text="Санкт-Петербург"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageView
+            android:layout_width="23dp"
+            android:alpha=".5"
+            android:layout_gravity="center"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/location"
+            android:layout_height="23dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#E0E0E0"
+        ></View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#FFFFFF">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:alpha=".87"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="03 авг."
+            android:layout_gravity="center_vertical"
+            android:textColor="#000000"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/dateView"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:alpha=".5"
+            android:layout_height="20dp"
+            android:layout_weight="0"
+            android:src="@drawable/time"
+            android:layout_marginRight="8dp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#E0E0E0"
+        ></View>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="left"
+        android:background="#ffffff"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:alpha=".87"
+            android:text="Мест: "
+            android:id="@+id/textView1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_gravity="center"
+            android:textColor="#000000" />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="40dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:layout_marginRight="8dp">
+        <ImageView
+            android:layout_width="23dp"
+            android:alpha=".5"
+            android:layout_height="23dp"
+            android:src="@drawable/maan"
+            android:layout_gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#E0E0E0"
+        ></View>
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_weight="20"
+        android:layout_gravity="center_horizontal" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+
+        android:layout_gravity="center_vertical"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/dateFind"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center_horizontal">
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find"
+            android:id="@+id/find"
+            android:textSize="15sp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="#3F51B5"
+            android:textColor="#fefefe" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
