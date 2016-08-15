@@ -23,14 +23,22 @@
 
         <activity
             android:name="ru.busride.NavigationActivity"
-            android:label="RoadToB"
+            android:label="Поиск"
             android:theme="@style/AppTheme" >
         </activity>
 
         <activity
             android:name="ru.busride.TripFragment"
-            android:label="RoadToB"
-            android:theme="@style/AppTheme" >
+            android:label="Поиск рейсов"
+            android:theme="@style/AppTheme" ></activity>
+
+        <activity
+            android:name="ru.busride.PointSelectActivity"
+            android:label="from"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ru.busride.NavigationActivity" />
         </activity>
 
        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for

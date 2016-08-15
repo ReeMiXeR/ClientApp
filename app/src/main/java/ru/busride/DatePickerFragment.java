@@ -6,8 +6,12 @@ package ru.busride;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.IntentService;
 import android.content.Intent;
+import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -41,26 +45,18 @@ public class DatePickerFragment extends DialogFragment
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        // Do something with the date chosen by the user
-
         TextView tv1= (TextView) getActivity().findViewById(R.id.dateView);
-
         Calendar cal = Calendar.getInstance();
         cal.set(year, month, day);
-        SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM");
-        String finalDate = outputFormat.format(cal.getTime());
-        tv1.setText(finalDate);
-
+        SimpleDateFormat date = new SimpleDateFormat("dd MMMM");
+        String dateReqq = date.format(cal.getTime());
+        tv1.setText(dateReqq);
         SimpleDateFormat date1 = new SimpleDateFormat("dd/MM/yyyy");
-        String dateReqq = date1.format(cal.getTime());
-        TextView textView = (TextView) getActivity().findViewById(R.id.dateFind);
-        textView.setText(dateReqq);
-
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("date", cal);
-        Intent i = new Intent();
-        i.putExtra("date", bundle);
-        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, i);
+        dateReqq = date1.format(cal.getTime());
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("date", dateReqq);
+        editor.commit();
 
     }
 

@@ -1,9 +1,12 @@
 package ru.busride;
 
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.app.Activity;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.app.DialogFragment;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,6 +24,7 @@ import com.roadtob.R;
  */
 public class NavigationActivity extends AppCompatActivity {
 
+    public android.app.Fragment qwe;
     private DrawerLayout mDrawer;
     private android.support.v7.widget.Toolbar toolbar;
     private NavigationView nvDrawer;
@@ -31,10 +35,10 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_layout);
 
-
         // Set a Toolbar to replace the ActionBar.
         toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         // Find our drawer view
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -49,8 +53,6 @@ public class NavigationActivity extends AppCompatActivity {
         selectDrawerItem(nvDrawer.getMenu().getItem(0));
 
     }
-
-
 
     private ActionBarDrawerToggle setupDrawerToggle() {
         return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open,  R.string.drawer_close);
@@ -128,7 +130,6 @@ public class NavigationActivity extends AppCompatActivity {
         // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig);
     }
-
 
 
 }

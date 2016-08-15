@@ -14,6 +14,11 @@ import retrofit2.http.Query;
  */
 public interface HttpService {
 
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("http://api.busride.ru/v1/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
     @GET("points")
     Call<List<SearchFragment.Points>> getPoints();
 
@@ -22,12 +27,4 @@ public interface HttpService {
 
     @GET("points/")
     Call<Map<String, Integer>> getPointsIds();
-
-    @GET("api/latest/trips/search/basic")
-    Call<List<Trips>> getTrips(@Query("from") int from, @Query("to") int to);
-
-    public static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://api.busride.ru/v1/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
 }

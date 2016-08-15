@@ -2,7 +2,9 @@ package ru.busride;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.roadtob.R;
@@ -24,6 +26,8 @@ public class SplashActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        preferences.edit().remove("date").commit();
 
         splashTimer = new Timer();
         splashTimer.schedule(new TimerTask()
