@@ -1,4 +1,4 @@
-package ru.busride;
+package ru.busride.models;
 
 
 import java.io.Serializable;
@@ -7,19 +7,20 @@ public class Trips implements Serializable {
 
     private static final long serialVersionUID = 1069130001;
 
-    private Integer   id;
+    private Integer id;
     private Integer transport_id;
     private String departure_date;
     private String arrival_date;
     private Integer routine_id;
-    private Double    price;
+    private Double price;
     private String price_currency;
     private String departure_point;
     private String arrival_point;
     private Integer seats;
     private Integer sits_total;
 
-    public Trips() {}
+    public Trips() {
+    }
 
     public Trips(Trips value) {
         this.id = value.id;
@@ -36,12 +37,12 @@ public class Trips implements Serializable {
     }
 
     public Trips(
-            Integer   id,
+            Integer id,
             Integer transport_id,
             String departure_date,
             String arrival_date,
             Integer routine_id,
-            Double    price,
+            Double price,
             String price_currency,
             String departure_point,
             String arrival_point,

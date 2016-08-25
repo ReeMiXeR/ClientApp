@@ -1,4 +1,4 @@
-package ru.busride;
+package ru.busride.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,27 +15,23 @@ import java.util.TimerTask;
 /**
  * Created by Shcherbakov on 04.08.2016.
  */
-public class SplashActivity extends Activity
-{
+public class SplashActivity extends Activity {
     private static final long DELAY = 3000;
     private boolean scheduled = false;
     private Timer splashTimer;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         preferences.edit().remove("date").commit();
 
         splashTimer = new Timer();
-        splashTimer.schedule(new TimerTask()
-        {
+        splashTimer.schedule(new TimerTask() {
             @Override
-            public void run()
-            {
-                Log.e("qwe","AEEEEEEEEEEEEE");
+            public void run() {
+                Log.e("qwe", "AEEEEEEEEEEEEE");
                 SplashActivity.this.finish();
                 startActivity(new Intent(SplashActivity.this, NavigationActivity.class));
             }
@@ -44,8 +40,7 @@ public class SplashActivity extends Activity
     }
 
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
         if (scheduled)
             splashTimer.cancel();

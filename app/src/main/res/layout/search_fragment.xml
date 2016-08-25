@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEEEEE"
     android:orientation="vertical"
-    tools:context="ru.busride.NavigationActivity"
-    >
+    tools:context="ru.busride.activities.NavigationActivity">
 
 
     <LinearLayout
@@ -50,6 +50,7 @@
 
 
         </LinearLayout>
+
         <ImageView
             android:layout_width="23dp"
             android:layout_height="23dp"
@@ -66,8 +67,7 @@
         android:layout_height="2dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#EEEEEE"
-        ></View>
+        android:background="#EEEEEE"></View>
 
     <LinearLayout
         android:id="@+id/to_layout"
@@ -128,8 +128,7 @@
         android:layout_height="2dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#E0E0E0"
-        ></View>
+        android:background="#E0E0E0"></View>
 
 
     <LinearLayout
@@ -160,9 +159,9 @@
             <TextView
                 android:id="@+id/dateView"
                 android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="8dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="-8dp"
                 android:alpha=".87"
                 android:text="03 авг."
@@ -186,8 +185,7 @@
         android:layout_height="2dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#E0E0E0"
-        ></View>
+        android:background="#E0E0E0"></View>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -209,6 +207,7 @@
             android:text="Мест: "
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#000000" />
+
         <Spinner
             android:id="@+id/spinner1"
             android:layout_width="100dp"
@@ -216,27 +215,29 @@
             android:layout_gravity="center_vertical"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="8dp"
             android:gravity="right">
-        <ImageView
-            android:layout_width="23dp"
-            android:layout_height="23dp"
-            android:layout_gravity="center"
-            android:alpha=".5"
-            android:src="@drawable/maan" />
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="center"
+                android:alpha=".5"
+                android:src="@drawable/maan" />
         </LinearLayout>
 
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#E0E0E0"
-        ></View>
+        android:background="#E0E0E0"></View>
 
 
     <Space
@@ -262,7 +263,6 @@
             android:textColor="#fefefe"
             android:textSize="15sp" />
     </LinearLayout>
-
 
 
 </LinearLayout>

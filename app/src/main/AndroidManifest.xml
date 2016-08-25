@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.roadtob" >
+    package="com.roadtob">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -9,12 +9,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
 
         <activity
-            android:name="ru.busride.SplashActivity"
+            android:name="ru.busride.activities.SplashActivity"
             android:label="RoadToB"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,27 +23,36 @@
         </activity>
 
         <activity
-            android:name="ru.busride.NavigationActivity"
+            android:name="ru.busride.activities.NavigationActivity"
             android:label="Поиск"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+
         </activity>
 
         <activity
-            android:name="ru.busride.TripFragment"
+            android:name="ru.busride.activities.TripsSearchActivity"
             android:label="Поиск рейсов"
-            android:theme="@style/AppTheme" ></activity>
-
-        <activity
-            android:name="ru.busride.PointSelectActivity"
-            android:label="from"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="ru.busride.NavigationActivity" />
+                android:value="ru.busride.activities.NavigationActivity" />
+
         </activity>
 
-       <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <activity
+            android:name="ru.busride.activities.PointSelectActivity"
+            android:label="from"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ru.busride.activities.NavigationActivity" />
+        </activity>
+
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

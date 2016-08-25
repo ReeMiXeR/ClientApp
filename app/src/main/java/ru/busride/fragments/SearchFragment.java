@@ -1,4 +1,4 @@
-package ru.busride;
+package ru.busride.fragments;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,6 +32,11 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import ru.busride.activities.TripsSearchActivity;
+import ru.busride.models.Points;
+import ru.busride.network.HttpService;
+import ru.busride.models.Trips;
+import ru.busride.activities.PointSelectActivity;
 
 
 public class SearchFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
@@ -49,10 +54,9 @@ public class SearchFragment extends android.support.v4.app.Fragment implements V
     TextView toStrView;
 
 
-    public SearchFragment(){
+    public SearchFragment() {
 
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -93,35 +97,36 @@ public class SearchFragment extends android.support.v4.app.Fragment implements V
 
         dateView.setOnClickListener(this);
 
-         final HttpService httpService = HttpService.retrofit.create(HttpService.class);
-         Call<List<Points>> callPoints = httpService.getPoints();
-         callPoints.enqueue(new Callback<List<Points>>() {
-             @Override
-             public void onResponse(Call<List<Points>> call, Response<List<Points>> response) {
-                    if (response.isSuccessful()) {
-                        Log.e("Response:", "Succesful");
-                        List<Points> listPoints = response.body();
-                        for (Points point : listPoints){
-                            HashMap map = new HashMap();
-                            map.put("id", point.getId());
-                            map.put("name", point.getName());
-                            map.put("longitude", point.getLongitude());
-                            map.put("latitude", point.getLatitude());
-                            list.add(map);
-                        }
-                        String[] departurePointStr = new String[list.size()];
-                        for (int i = 0; i < list.size(); i++){
-                             departurePointStr[i] = list.get(i).get("name");
-                        }
-
+        final HttpService httpService = HttpService.retrofit.create(HttpService.class);
+        Call<List<Points>> callPoints = httpService.getPoints();
+        callPoints.enqueue(new Callback<List<Points>>() {
+            @Override
+            public void onResponse(Call<List<Points>> call, Response<List<Points>> response) {
+                if (response.isSuccessful()) {
+                    Log.e("Response:", "Succesful");
+                    List<Points> listPoints = response.body();
+                    for (Points point : listPoints) {
+                        HashMap map = new HashMap();
+                        map.put("id", point.getId());
+                        map.put("name", point.getName());
+                        map.put("longitude", point.getLongitude());
+                        map.put("latitude", point.getLatitude());
+                        list.add(map);
                     }
+                    String[] departurePointStr = new String[list.size()];
+                    for (int i = 0; i < list.size(); i++) {
+                        departurePointStr[i] = list.get(i).get("name");
+                    }
+
                 }
-             @Override
-             public void onFailure(Call<List<Points>> call, Throwable t) {
-                 Log.e(LOG_TAG,"Failed to get points");
-                 t.printStackTrace();
-                }
-            });
+            }
+
+            @Override
+            public void onFailure(Call<List<Points>> call, Throwable t) {
+                Log.e(LOG_TAG, "Failed to get points");
+                t.printStackTrace();
+            }
+        });
 
         LinearLayout fromLayout = (LinearLayout) rootView.findViewById(R.id.from_layout);
         LinearLayout toLayout = (LinearLayout) rootView.findViewById(R.id.to_layout);
@@ -212,7 +217,7 @@ public class SearchFragment extends android.support.v4.app.Fragment implements V
                                     list1.add(map);
                                 }
 
-                                Intent intent = new Intent(getActivity(), TripFragment.class);
+                                Intent intent = new Intent(getActivity(), TripsSearchActivity.class);
                                 Bundle bundle = new Bundle();
                                 bundle.putSerializable("trips", list1);
                                 intent.putExtra("trips", bundle);
@@ -243,7 +248,7 @@ public class SearchFragment extends android.support.v4.app.Fragment implements V
         }
     }
 
-    public String DateFormat(String date, int mode){
+    public String DateFormat(String date, int mode) {
         try {
             if (mode == 0) {
                 SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -282,32 +287,6 @@ public class SearchFragment extends android.support.v4.app.Fragment implements V
         sub.setLayoutParams(params);
         sub.setText(city);
         head.setTextSize(TypedValue.COMPLEX_UNIT_SP, 10);
-    }
-
-    public class Points {
-        int id;
-        String name;
-        int longitude;
-        int latitude;
-
-
-        public int getId(){
-            return id;
-        }
-        public String getName(){
-            return name;
-        }
-        public int getLongitude(){
-            return longitude;
-        }
-        public int getLatitude() {
-            return latitude;
-        }
-
-        @Override
-        public String toString() {
-            return id + " - " + name + " - " + longitude + " - " + latitude;
-        }
     }
 
 

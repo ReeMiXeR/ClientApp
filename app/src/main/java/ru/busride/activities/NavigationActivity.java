@@ -1,14 +1,8 @@
-package ru.busride;
+package ru.busride.activities;
 
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.app.Activity;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
-import android.view.View;
-import android.app.DialogFragment;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,12 +13,15 @@ import android.view.MenuItem;
 
 import com.roadtob.R;
 
+import ru.busride.fragments.SearchFragment;
+import ru.busride.fragments.TestFragment;
+
 /**
  * Created by Shcherbakov on 30.07.2016.
  */
 public class NavigationActivity extends AppCompatActivity {
 
-    public android.app.Fragment qwe;
+
     private DrawerLayout mDrawer;
     private android.support.v7.widget.Toolbar toolbar;
     private NavigationView nvDrawer;
@@ -55,7 +52,7 @@ public class NavigationActivity extends AppCompatActivity {
     }
 
     private ActionBarDrawerToggle setupDrawerToggle() {
-        return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open,  R.string.drawer_close);
+        return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open, R.string.drawer_close);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -73,12 +70,15 @@ public class NavigationActivity extends AppCompatActivity {
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
         Class fragmentClass;
-        switch(menuItem.getItemId()) {
+        switch (menuItem.getItemId()) {
             case R.id.nav_first_fragment:
                 fragmentClass = SearchFragment.class;
                 break;
             case R.id.nav_second_fragment:
-                fragmentClass = testFragment.class;
+                fragmentClass = TestFragment.class;
+                break;
+            case R.id.nav_third_fragment:
+                fragmentClass = TestFragment.class;
                 break;
 
             default:

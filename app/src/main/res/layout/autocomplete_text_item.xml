@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/auto_item"
-    android:layout_width="fill_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDarker"
-    android:textColor="#000000"
-    android:textSize="18sp" />
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_marginLeft="4dp"
+        android:id="@+id/auto_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="from"
+        android:layout_weight="1"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginRight="4dp"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:alpha=".7"
+        android:text="Россия" />
+</LinearLayout>
+
 
 
